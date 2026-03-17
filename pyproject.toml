@@ -1,0 +1,28 @@
+[project]
+name = "python-base"
+version = "0.1.0"
+description = "A Python project template"
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = ["pytest", "pyright", "ruff", "pre-commit"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF", "C4", "PIE", "PT", "PERF", "W"]
+
+[tool.pyright]
+typeCheckingMode = "basic"
+venvPath = "."
+venv = ".venv"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
